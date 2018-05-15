@@ -238,14 +238,14 @@ struct Car
 		return *this;
 	}
 	
-	//присвоение машине менеджера, их может быть несколько
+	//РїСЂРёСЃРІРѕРµРЅРёРµ РјР°С€РёРЅРµ РјРµРЅРµРґР¶РµСЂР°, РёС… РјРѕР¶РµС‚ Р±С‹С‚СЊ РЅРµСЃРєРѕР»СЊРєРѕ
 	void SetManager(const Manager& B)
 	{
 		manager = AddStruct(manager, AmountManager);
 		manager[AmountManager] = B;
 		AmountManager++;
 	}
-	//присвоение машине покупателя, может быть только один
+	//РїСЂРёСЃРІРѕРµРЅРёРµ РјР°С€РёРЅРµ РїРѕРєСѓРїР°С‚РµР»СЏ, РјРѕР¶РµС‚ Р±С‹С‚СЊ С‚РѕР»СЊРєРѕ РѕРґРёРЅ
 	void SetBuyer(const Buyer& B)
 	{
 		buyer = B;
@@ -278,12 +278,6 @@ struct Car
 		cin >> obj.BodyVolume;
 		cout << "Enter prize: ";
 		cin >> obj.prize;
-		/*
-		cout << "Add Manager: ";
-		obj.manager = AddStruct(obj.manager, obj.AmountManager);
-		cin >> obj.manager[obj.AmountManager];
-		obj.AmountManager++;
-		*/
 		return is;
 	}
 	friend ostream& operator<<(ostream& os, Car& obj)
@@ -298,104 +292,6 @@ void SetCar(Car* car, int amount)
 	cin >> car[amount];
 }
 
-//поиск для общих случаев
-/*
-template<typename T>
-bool FindAllCases(const T a1, int Case)
-{
-	switch (Case)
-	{
-	case '0':
-	{
-		cout << "Enter name: ";
-		string Name;
-		cin.get();
-		getline(cin, Name);
-		return FindByName(a1, Name);
-	}
-	case '1':
-	{
-		cout << "Enter Second Name: ";
-		string SecondName;
-		cin.get();
-		getline(cin, SecondName);
-		return FindBySecondName(a1,SecondName);
-	}
-	case '2':
-	{
-		cout << "Enter Third Name: ";
-		string ThirdName;
-		cin.get();
-		getline(cin, ThirdName);
-		return FindByThirdName(a1,ThirdName);
-	}
-	case '3':
-	{
-		cout << "Enter Adress: ";
-		string Adress;
-		cin.get();
-		getline(cin, Adress);
-		return FindByAdress(a1, Adress);
-	}
-	case '4':
-	{
-		cout << "Enter Phone: ";
-		string Phone;
-		cin.get();
-		getline(cin, Phone);
-		return FindByPhone(a1, Phone);
-	}
-	case '5':
-	{
-		cout << "Enter Year: ";
-		int Year;
-		cin >> Year;
-		return FindByYear(a1, Year);
-	}
-	case '6':
-	{
-		cout << "Enter Inditification Number: ";
-		int InditificationNumber;
-		cin >> InditificationNumber;
-		return FindByInd(a1, InditificationNumber);
-	}
-	case '7':
-	{
-		cout << "Enter Seniority: ";
-		int seniority;
-		cin >> seniority;
-		return a1.seniority == seniority;
-	}
-	case '8':
-	{
-		cout << "Enter Engine Capacity: ";
-		int EngineCapacity;
-		cin >> EngineCapacity;
-		return a1.EngineCapacity == EngineCapacity;
-	}
-	case '9':
-	{
-		cout << "Enter Body Volume: ";
-		int BodyVolume;
-		cin >> BodyVolume;
-		return a1.BodyVolume == BodyVolume;
-	}
-	case '10':
-	{
-		cout << "Enter Prize: ";
-		int prize;
-		cin >> prize;
-		return a1.prize == prize;
-	}
-	default:
-	{
-		cout << "There is not this find parametr!" << endl;
-		return false;
-	}
-
-	}
-}
-*/
 template<typename T>
 bool FindByName(const T a1, const string a2)
 {
@@ -426,40 +322,40 @@ bool FindByYear(const T a1, const int a2)
 {
 	return a1.year == a2;
 }
-//Индивидуальный поиск
-//поиск покупателя по идентификационному номеру
+//РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Р№ РїРѕРёСЃРє
+//РїРѕРёСЃРє РїРѕРєСѓРїР°С‚РµР»СЏ РїРѕ РёРґРµРЅС‚РёС„РёРєР°С†РёРѕРЅРЅРѕРјСѓ РЅРѕРјРµСЂСѓ
 bool FindByInd(const Buyer buyer, const string a)
 {
 	return buyer.InditificationNumber == a;
 } 
- //поиск менеджера по трудовому стажу
+ //РїРѕРёСЃРє РјРµРЅРµРґР¶РµСЂР° РїРѕ С‚СЂСѓРґРѕРІРѕРјСѓ СЃС‚Р°Р¶Сѓ
 template<typename T>
 bool FindBySeniority(const T manager, const double seniority)
 {
 	return manager.seniority == seniority;
 }
 
-//Поиск автомобиля по обьему двигателя
+//РџРѕРёСЃРє Р°РІС‚РѕРјРѕР±РёР»СЏ РїРѕ РѕР±СЊРµРјСѓ РґРІРёРіР°С‚РµР»СЏ
 bool FindByEC(const Car car, double EC)
 {
 	return car.EngineCapacity == EC;
 }
-//поиск автомобиля по обьему кузова
+//РїРѕРёСЃРє Р°РІС‚РѕРјРѕР±РёР»СЏ РїРѕ РѕР±СЊРµРјСѓ РєСѓР·РѕРІР°
 bool FindByBV(const Car car, double BV)
 {
 	return car.BodyVolume == BV;
 }
-//поиск машыны по цене
+//РїРѕРёСЃРє РјР°С€С‹РЅС‹ РїРѕ С†РµРЅРµ
 bool FindByPrize(const Car car, double prize)
 {
 	return car.prize == prize;
 }
-//поиск автомобиля по модели
+//РїРѕРёСЃРє Р°РІС‚РѕРјРѕР±РёР»СЏ РїРѕ РјРѕРґРµР»Рё
 bool FindByModel(const Car car, const string model)
 {
 	return car.Model == model;
 }
-//Удаляем проданную машину
+//РЈРґР°Р»СЏРµРј РїСЂРѕРґР°РЅРЅСѓСЋ РјР°С€РёРЅСѓ
 void DeleteCar(Car** cars,const Car& car, int CarsAmount)
 {
 	bool found = false;
