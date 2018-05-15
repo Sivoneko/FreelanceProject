@@ -12,72 +12,16 @@
 #include "Header.h"
 using namespace std;
 
-void Menu()
-{
-	cout << " 1 - Add cars \n";
-	cout << " 2 - Buy Car \n";
-	cout << " 3 - Output all avialeble cars \n";
-	cout << " 4 - Output selled cars \n";
-	cout << " 5 - Find Menu \n";
-	cout << endl;
-}
-void FindMenu()
-{
-	cout << "1 - Find Car \n";
-	cout << "2 - Find Manager \n";
-	cout << endl;
-}
-void FindCarMenu()
-{
-	cout << "1 - Find by Name \n";
-	cout << "2 - Find by Model \n";
-	cout << "3 - Find by Engine Capacity \n";
-	cout << "4 - Find by Body Volume \n";
-	cout << "5 - Find by Prize \n";
-	cout << endl;
-}
-void FindManagerMenu()
-{
-	cout << "1 - Find by Name \n";
-	cout << "2 - Find by Second Name \n";
-	cout << "3 - Find by Third Name \n";
-	cout << "4 - Find by Year \n";
-	cout << "5 - Find by Adress \n";
-	cout << "6 - Find by Phone \n";
-	cout << "7 - Find by Seniority \n";
-}
+void Menu();
+void FindMenu();
+void FindCarMenu();
+void FindManagerMenu();
 
-void OutToFileCar(Car* cars, const int CarsAmount,ostream& os)
-{
-	for (int i(0); i < CarsAmount; i++)
-	{
-		os << cars[i].Name << " " << cars[i].Model << " " << cars[i].year << " " << cars[i].EngineCapacity << " " << cars[i].BodyVolume <<
-			" " << cars[i].prize << endl;
-	}
-}
-void InputFromFileCar(Car** cars, const int CarsAmount, istream& is)
-{
-	for (int i(0); i < CarsAmount; i++)
-	{
-		is >> cars[i]->Name >> cars[i]->Model >> cars[i]->year >> cars[i]->EngineCapacity >> cars[i]->BodyVolume >> cars[i]->prize;
-	}
-}
+void OutToFileCar(Car*, const int,ostream&);
+void InputFromFileCar(Car**, const int, istream&);
 
-void OutToFileManager(Manager* managers, const int ManagerAmount, ostream& os)
-{
-	for (int i(0); i < ManagerAmount; i++)
-	{
-		os << managers[i].Name << " " << managers[i].SecondName << " " << managers[i].ThirdName << " " << managers[i].adress << " " << managers[i].phone <<
-			" " << managers[i].year << " " << managers[i].seniority << endl;
-	}
-}
-void InputFromFileManager(Manager* managers, const int ManagerAmount, istream& is)
-{
-	for (int i(0); i < ManagerAmount; i++)
-	{
-		is >> managers[i].Name >> managers[i].SecondName >> managers[i].ThirdName >> managers[i].adress >> managers[i].phone >> managers[i].year >> managers[i].seniority;
-	}
-}
+void OutToFileManager(Manager*, const int, ostream&);
+void InputFromFileManager(Manager*, const int, istream&);
 
 int main()
 {
@@ -624,3 +568,69 @@ int main()
 		return 0;
 	}
 
+void Menu()
+{
+	cout << " 1 - Add cars \n";
+	cout << " 2 - Buy Car \n";
+	cout << " 3 - Output all avialeble cars \n";
+	cout << " 4 - Output selled cars \n";
+	cout << " 5 - Find Menu \n";
+	cout << endl;
+}
+void FindMenu()
+{
+	cout << "1 - Find Car \n";
+	cout << "2 - Find Manager \n";
+	cout << endl;
+}
+void FindCarMenu()
+{
+	cout << "1 - Find by Name \n";
+	cout << "2 - Find by Model \n";
+	cout << "3 - Find by Engine Capacity \n";
+	cout << "4 - Find by Body Volume \n";
+	cout << "5 - Find by Prize \n";
+	cout << endl;
+}
+void FindManagerMenu()
+{
+	cout << "1 - Find by Name \n";
+	cout << "2 - Find by Second Name \n";
+	cout << "3 - Find by Third Name \n";
+	cout << "4 - Find by Year \n";
+	cout << "5 - Find by Adress \n";
+	cout << "6 - Find by Phone \n";
+	cout << "7 - Find by Seniority \n";
+}
+
+void OutToFileCar(Car* cars, const int CarsAmount,ostream& os)
+{
+	for (int i(0); i < CarsAmount; i++)
+	{
+		os << cars[i].Name << " " << cars[i].Model << " " << cars[i].year << " " << cars[i].EngineCapacity << " " << cars[i].BodyVolume <<
+			" " << cars[i].prize << endl;
+	}
+}
+void InputFromFileCar(Car** cars, const int CarsAmount, istream& is)
+{
+	for (int i(0); i < CarsAmount; i++)
+	{
+		is >> cars[i]->Name >> cars[i]->Model >> cars[i]->year >> cars[i]->EngineCapacity >> cars[i]->BodyVolume >> cars[i]->prize;
+	}
+}
+
+void OutToFileManager(Manager* managers, const int ManagerAmount, ostream& os)
+{
+	for (int i(0); i < ManagerAmount; i++)
+	{
+		os << managers[i].Name << " " << managers[i].SecondName << " " << managers[i].ThirdName << " " << managers[i].adress << " " << managers[i].phone <<
+			" " << managers[i].year << " " << managers[i].seniority << endl;
+	}
+}
+void InputFromFileManager(Manager* managers, const int ManagerAmount, istream& is)
+{
+	for (int i(0); i < ManagerAmount; i++)
+	{
+		is >> managers[i].Name >> managers[i].SecondName >> managers[i].ThirdName >> managers[i].adress >> managers[i].phone >> managers[i].year >> managers[i].seniority;
+	}
+}
