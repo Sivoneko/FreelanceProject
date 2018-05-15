@@ -137,7 +137,7 @@ int main()
 		{
 			//Ищем машину, которую купить хотим
 			//Переводим ее в масив структур машин, которые проданы
-			//Удаляем эту машину с доступных(хз, буду ли делать)
+			//Удаляем эту машину с доступных
 			//Вводим данные покупателя
 			//Вводим имя менеджера, который нам ее посоветовал
 			//Приваиваем этому менеджеру этого покупателя
@@ -152,11 +152,7 @@ int main()
 				
 				try
 				{
-					
-					//Нужно будет попробовать сократить количество функций поиска, используя одну с доп параметром, в который будем передавать значение с enum
-					//так не вышло
 					FoundCar = *find_if(cars, cars + CarsAmount, bind2nd(ptr_fun(FindByName<Car>), CarName));
-
 				}
 				catch (...)
 				{
@@ -611,7 +607,7 @@ int main()
 		}
 	}while (answer != 'o');
 
-	//Вывод в файл ここで日本語で書けますよ。おどろいた。では、始めましょう。
+	//Вывод в файл 
 	ofstream outAC("AvialebleCar.txt", ios::out);
 	ofstream outSC("SelledCar.txt", ios::out);
 	outAC << CarsAmount << endl;
@@ -623,11 +619,6 @@ int main()
 	outAC.close();
 	outSC.close();
 
-
-	//cout << find(cars, cars + CarsAmount, 1)->Name<<endl;
-	//Car c = *find_if(cars, cars + CarsAmount, bind2nd(ptr_fun(FindByEC), 3.0));
-	//Manager man = *find_if(managers, managers + ManagerAmount, bind2nd(ptr_fun(FindByName<Manager>), "Kek"));
-	//cout << find_if(cars, cars + CarsAmount, bind2nd(mem_fun_ref(&Car::FindEC), 1));
 
 		_getch();
 		return 0;
