@@ -29,7 +29,7 @@ istream& operator>>(istream& is, Buyer& obj)
 	cout << "Input Indification number: ";
 	//cin.get();
 	getline(cin, obj.InditificationNumber);
-	return is;
+	return is; 
 }
 
 //--------------------------------------------------------------------
@@ -271,29 +271,29 @@ void DeleteCar(Car** cars, const Car& car, int CarsAmount)
 
 }
 
-//Ïîèñê àâòîìîáèëÿ ïî îáüåìó äâèãàòåëÿ
+//ÄÃ®ÄÅ„Ä™ Å•Ã¢ÅˆÃ®Ä›Ã®Ã¡ÄÃ«Ë™ ÄÃ® Ã®Ã¡Ã¼ÄºÄ›Ã³ Ã¤Ã¢ÄÄƒÅ•ÅˆÄºÃ«Ë™
 bool FindByEC(const Car car, double EC)
 {
 	return car.EngineCapacity == EC;
 }
-//ïîèñê àâòîìîáèëÿ ïî îáüåìó êóçîâà
+//ÄÃ®ÄÅ„Ä™ Å•Ã¢ÅˆÃ®Ä›Ã®Ã¡ÄÃ«Ë™ ÄÃ® Ã®Ã¡Ã¼ÄºÄ›Ã³ Ä™Ã³Ã§Ã®Ã¢Å•
 bool FindByBV(const Car car, double BV)
 {
 	return car.BodyVolume == BV;
 }
-//ïîèñê ìàøûíû ïî öåíå
+//ÄÃ®ÄÅ„Ä™ Ä›Å•Å™Å±Ã­Å± ÄÃ® Ã¶ÄºÃ­Äº
 bool FindByPrize(const Car car, double prize)
 {
 	return car.prize == prize;
 }
-//ïîèñê àâòîìîáèëÿ ïî ìîäåëè
+//ÄÃ®ÄÅ„Ä™ Å•Ã¢ÅˆÃ®Ä›Ã®Ã¡ÄÃ«Ë™ ÄÃ® Ä›Ã®Ã¤ÄºÃ«Ä
 bool FindByModel(const Car car, const string model)
 {
 	return car.Model == model;
 }
-//Óäàëÿåì ïğîäàííóş ìàøèíó
+//Ã“Ã¤Å•Ã«Ë™ÄºÄ› ÄÄ‘Ã®Ã¤Å•Ã­Ã­Ã³Å£ Ä›Å•Å™ÄÃ­Ã³
 void DeleteCar(Car** cars, const Car& car, int CarsAmount);
-//ïîèñê ïîêóïàòåëÿ ïî èäåíòèôèêàöèîííîìó íîìåğó
+//ÄÃ®ÄÅ„Ä™ ÄÃ®Ä™Ã³ÄÅ•ÅˆÄºÃ«Ë™ ÄÃ® ÄÃ¤ÄºÃ­ÅˆÄÃ´ÄÄ™Å•Ã¶ÄÃ®Ã­Ã­Ã®Ä›Ã³ Ã­Ã®Ä›ÄºÄ‘Ã³
 bool FindByInd(const Buyer buyer, const string a)
 {
 	return buyer.InditificationNumber == a;
