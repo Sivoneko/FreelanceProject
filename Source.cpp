@@ -29,7 +29,7 @@ istream& operator>>(istream& is, Buyer& obj)
 	cout << "Input Indification number: ";
 	//cin.get();
 	getline(cin, obj.InditificationNumber);
-	return is; 
+	return is;
 }
 
 //--------------------------------------------------------------------
@@ -271,29 +271,29 @@ void DeleteCar(Car** cars, const Car& car, int CarsAmount)
 
 }
 
-//Ďîčńę ŕâňîěîáčë˙ ďî îáüĺěó äâčăŕňĺë˙
+//Поиск автомобиля по обьему двигателя
 bool FindByEC(const Car car, double EC)
 {
 	return car.EngineCapacity == EC;
 }
-//ďîčńę ŕâňîěîáčë˙ ďî îáüĺěó ęóçîâŕ
+//поиск автомобиля по обьему кузова
 bool FindByBV(const Car car, double BV)
 {
 	return car.BodyVolume == BV;
 }
-//ďîčńę ěŕřűíű ďî öĺíĺ
+//поиск машыны по цене
 bool FindByPrize(const Car car, double prize)
 {
 	return car.prize == prize;
 }
-//ďîčńę ŕâňîěîáčë˙ ďî ěîäĺëč
+//поиск автомобиля по модели
 bool FindByModel(const Car car, const string model)
 {
 	return car.Model == model;
 }
-//Óäŕë˙ĺě ďđîäŕííóţ ěŕřčíó
+//Удаляем проданную машину
 void DeleteCar(Car** cars, const Car& car, int CarsAmount);
-//ďîčńę ďîęóďŕňĺë˙ ďî čäĺíňčôčęŕöčîííîěó íîěĺđó
+//поиск покупателя по идентификационному номеру
 bool FindByInd(const Buyer buyer, const string a)
 {
 	return buyer.InditificationNumber == a;
